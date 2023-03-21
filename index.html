@@ -10,9 +10,8 @@
 </head>
 <body>
     <header>
-    
+        <div>
             <a href=""><img src="/img/logo.png" alt="Logo de Bit arquitectos"></a>
-
             <nav>
                 <ul>
                     <li><a href="">proyectos</a></li>
@@ -21,8 +20,9 @@
                     <li><a href="">contacto</a></li>
                 </ul>      
             </nav>
-     </header>
-
+        </div>
+    </header>
+     
     <main>
         <section class="bienvenida">
                 <div></div>
@@ -39,8 +39,7 @@
             <article class="container">
                 <img src="img/desarrollos.jpg" alt="desarrollos">
                 <a href="desarrollos.html"><div class="overlay">
-                </div></a>
-                <h2>DESARROLLOS</h2>
+                </div></a>                    <h2>DESARROLLOS</h2>
             </article>
             <article class="container">
                 <img src="img/inversiones.jpg" alt="inversiones">
@@ -50,22 +49,22 @@
             </article>
         </section>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <section>
-            <form action="codigo.php" method="post">
-                <label for=""> Nombre:
-                    <input type="text" name="nombre" value="Escriba su nombre">
+        <section class="form_container">
+            <form class="form" action="codigo.php" method="post">
+                <label class="form_label" for=""> Nombre:
+                    <input class="form_input" type="text" name="nombre" value="Escriba su nombre">
                 </label>
-                <label for=""> Profesion:
-                    <select name="" id="">
+                <label class="form_label" for=""> Profesion:
+                    <select class="form_input" name="" id="">
                         <option value="opcion1">Arquitecto</option>
                         <option value="opcion2">Ingeniero</option>
                     </select>
                 </label>
-                <label for=""> E-mail:
-                    <input type="email" name="mail" value="info@dominio.com">
+                <label class="form_label" for=""> E-mail:
+                    <input class="form_input" type="email" name="mail" value="info@dominio.com">
                 </label>
-                <label for=""> Mensaje:
-                    <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
+                <label class="form_label" for=""> Mensaje:
+                    <textarea class="form_input" name="mensaje" id="" cols="30" rows="10"></textarea>
                 </label>
                 <button type="submit"> Enviar </button>
             </form>

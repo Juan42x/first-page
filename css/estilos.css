@@ -5,15 +5,27 @@ font-family: 'Noto Sans', sans-serif;
 font-family: 'Roboto', sans-serif; 
 */
 
+
+
+
+/* Declaracion de variables */
+:root{
+--primaryColor: #0e0e0e;
+--secondaryColor: #e1e1e1;
+--width: 1200px;
+}
+
 /* Estilos Generales */
-* {box-sizing: border-box}
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Noto Sans', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    background-color: #0e0e0e;
-    color: #ececec;
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
     margin: 0px;
 }
 
@@ -22,21 +34,26 @@ body {
 
 /* Header */
 
-header {
+header{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 82px;
+    justify-content: center;
+    background-color: var(--primaryColor);
+    box-shadow: 0px 0px 10px var(--primaryColor);
     width: 100%;
-    padding-left: 160px;
-    padding-right: 160px;
     position: sticky;
     z-index: 1000;
     overflow: hidden;
     position: fixed;
     top: 0;
-    background-color: #0e0e0e;
-    box-shadow: 0px 0px 10px #0e0e0e;
+}
+
+header div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 82px;
+    width: var(--width);
+    margin: 0 auto;
 }
 
 header img{
@@ -48,18 +65,15 @@ header img{
 
 nav ul{
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     width: 500px;
-    padding: 0px;
     list-style: none;
+    margin-right: 20px;
 }
 
-
-
 nav a {
-    color: rgb(236, 236, 236);
+    color: var(--secondaryColor);
     text-decoration: none;
 }
 nav a:hover {
@@ -67,7 +81,7 @@ nav a:hover {
     transition: .2s;
 }
 
-/* BIENVENIDA */
+/* Seccion Bienvenida */
 
 
 .bienvenida{
@@ -75,9 +89,9 @@ nav a:hover {
     flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
-    width: 1200px;
+    width: 100%;
     padding-top: 82px;
-    color: #0e0e0e;
+    color: var(--primaryColor);
     height: 100vh;
     font-size: 3em;
     margin: 0px auto;
@@ -85,7 +99,7 @@ nav a:hover {
 
 .bienvenida div{
     display: inline-block;
-    width: 1200px;
+    width: var(--width);
     height: 500px;
     margin: 0px auto;
     background-image: url("../img/fondo.jpg");
@@ -94,114 +108,116 @@ nav a:hover {
    
 .bienvenida h1{
     display: inline-block;
-    margin: 0px;
-    margin-bottom: 20px;
-    margin-top: 40px;
+    font-weight: 700;
+    width: var(--width);
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1em;
+    padding-left: 0px;
+    text-align: left;
+    color: var(--secondaryColor);
 }
 
 .bienvenida h1 span{
-    color:#0e0e0e;
+    color:var(--primaryColor);
 }
 
 .bienvenida h1 span:hover{
-    color: #ececec;
-    transition: 1s ease-in-out;
+    color: var(--secondaryColor);
+    transition: 0.2s ease-in-out;
 }
 
-p {
-    text-align: left;
-    padding-left: 0px;
-    padding-right: 1em ;
-    max-width: 50%;
-}
-
-h1 {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 1em;
-    font-weight: 900;
-    padding-left: 0px;
-    text-align: left;
-    color: white;
-}
-
-
-
-
+/* Seccion Botones */
 
 .botones{
     height: 500px;
+    width: 100%;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    background-color: rgb(232, 232, 232);
-    color: white;
+    gap: 40px;
+    background-color: var(--secondaryColor);
+    color: var(--secondaryColor);
+
+}
+
+.botones article{
+    display: flex;
+    width: 250px;
+    height: 250px;
     flex-wrap: wrap;
-}
-
-section article{
-    display: inline-block;
-    margin: 20px;
-    text-align: center;
+    justify-content: center;
+    align-content: center;
     padding: 0px;
-    position: relative;
-    text-shadow: 0px 0px 5px black;
+    text-shadow: 0px 0px 5px var(--primaryColor);
 }
 
-section article img{
-    display: block;
+.container img{
     width: 250px;
     height: 250px; 
     object-fit: cover;
+    overflow: hidden;
 }
 
-section article h2{
-    display: inline-block;
-    position: relative;
-    height: 10px;
-    margin: 0px;
-    bottom: 50px;
-    z-index: 150;
-}
-
-section article:hover{
-    outline: solid 10px black;
-    transition: .2s;
-    opacity: 1;
-    cursor: pointer;
+.container img:hover{
+    outline: .5em solid var(--primaryColor);
+    transition: .1s ease-in-out;
 }
 
 
-.overlay {
-    display: inline-block;
-    position: absolute;
-    bottom: 30px;
-    left: 0px;
-    height: 252px;
-    width: 100%;
-    background-color: black;
-    font-size: 1em;
-    padding: 20px;
-    text-align: center;
-    z-index: 100;
-    opacity: 0;
-}
+/* Estilos de formulario */ 
 
-.overlay:hover{
-    opacity: .5;
-    transition: .2s;
-}
-
-
-form {
+.form_container{
     display: flex;
+    width: calc(var(--width)/2);
+    height: 300px;
+    width: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    justify-items: start;
+    flex-wrap: wrap;
     width: 1200px;
 }
 
+.form_label{
+
+}
+
+.form_input{
+    width: 500px;
+    height: 2.5em;
+    background-color: var(--primaryColor);
+    border: none;
+    border-bottom: 2px solid var(--secondaryColor);
+    outline: none;
+}
+
+.form button{
+    width: 500px;
+    height: 3em;
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+    border-radius: .5em;
+    margin-top: 10px;
+}
+
+.form button:hover{
+    background-color: #a1a1a1;
+
+}
 /* Estilos de footer */ 
 
 footer {
-    background-color: black;
-    color: white;
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
     padding: 50px;
     box-shadow: 0px 0px 20px rgb(182, 182, 182);
 }
